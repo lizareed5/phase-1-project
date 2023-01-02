@@ -1,0 +1,15 @@
+{
+  "albums": [
+    {
+      "id": 1,
+      "name": "Test Album",
+      "artist" :"Test Artist",
+      "tracks" : [
+        "Song 1",
+        "Song 2"
+      ],
+      "image": "http://www.pngmart.com/files/3/Toy-Story-Woody-PNG-Photos.png",
+      "rating": 8.7
+    }
+  ]
+}

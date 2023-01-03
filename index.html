@@ -1,13 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="style.css">
-  <title>Phase 1 Project</title>
+  <title>Album Liker</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script type="text/javascript" src="index.js"></script>
 </head>
 <body>
-  hello
-  hi world
-  hey again
-  <script type="text/javascript" src="index.js"></script>
+  <div id="top">
+    <img class="album-covers" src="assets" />
+    <!-- fill in img/logo for the src above if we want a picture -->
+  </div>
+  <hr/>
+  
+  <nav id="album-list">
+    <img id="nav-img" src="" />
+    <!-- i think the src will work for this but we will see! -->
+  </nav>
+
+  <div id="album-info">
+    <div>
+      <h1 id="title"></h1>
+      <h2 id="artist"></h2>
+      <button id="like">❤️</button>
+      
+    </div>
+    <img id="main-image" src="" />
+    <ol id="track-list">
+      <li></li>
+    </ol>
+    <!-- not sure if we need to add src above or not -->
+  </div>
+
+  <div id="artist-description">
+    <h1 id="artist-name"></h1>
+    <p id="artist-bio"></p>
+  </div>
+  
+  <div id="album-reviews">
+    <ul id="review-list">
+      <li></li>
+      <!-- remove the bullets if needed -->
+    </ul>
+    <button id="edit-review">edit review</button>
+  </div>
+
+  <div id="add-review">
+    <form id="new-review">
+      <label for="review">new review:</label>
+      <textarea id="review"></textarea>
+      <button class="submit" type="submit">post</button>
+    </form>
+  </div>
+
+  <div id="add-album">
+    <form id="new-album">
+      <input
+        type="text"
+        name="album name"
+        value=""
+        placeholder="enter album name"
+        class="input-text"
+    />
+    <br />
+    <input
+      type="text"
+      name="artist name"
+      value=""
+      placeholder="enter artist name"
+      class="input-text"
+    />
+    <br />
+    <input
+      type="text"
+      name="tracklist"
+      value=""
+      placeholder="enter tracklist, user enter for a new line"
+      class="input-text"
+    />
+   <br />
+    <input
+        type="text"
+        name="image"
+        value=""
+        placeholder="enter album cover url"
+        class="input-text"
+    />
+    <br />
+    <input
+    type="number"
+    name="album rating"
+    value=""
+    placeholder="enter album rating"
+    class="input-text"
+  />
+  <br />
+  <input
+    type="text"
+    name="artist description"
+    value=""
+    placeholder="enter artist bio"
+    class="input-text"
+  />
+  <br />
+  <input
+    type="submit"
+    name="submit"
+    value="add an album"
+    class="submit"
+  />
+    </form>
+  </div>
+
+  <div id="add-rating">
+    <form id="new-rating">
+      <label for="rating">add your rating</label>
+      <textarea id="rating"></textarea>
+      <button class="submit" type="submit">add</button>
+    </form>
+  </div>
+
+  <div id="ratings-combined">
+    <h1 id="average-rating-title">average rating</h1>
+    <h2 id="average-rating-amt"></h2>
+    <h3 id="out-of-ten">/10</h3>
+  </div>
+
+  <div id="light-dark-mode-toggle">
+    <label class="switch">
+      <input type="checkbox">
+      <span class="slider round"></span>
+    </label>
+  </div>
 </body>
 </html>

@@ -1,3 +1,4 @@
+// add eventlistener for DOMCONTENTLOADED
 // set our consts e.g. (const url = "http://localhost:3000", const album = ... , const artist = ...)
 // fetch request on url
 // use .map to itirate over data

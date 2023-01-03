@@ -100,6 +100,25 @@
       "name": "Placeholder",
       "artist": "Placeholder",
       "tracks" : [
+        "Right on Time",
+        "You and Me on the Rock (featuring Lucius)",
+        "This Time Tomorrow",
+        "Broken Horses",
+        "Letter to the Past",
+        "Mama Werewolf",
+        "When You're Wrong",
+        "Stay Gentle",
+        "Sinners, Saints and Fools",
+        "Throwing Good After Bad"
+      ],
+      "image": "https://upload.wikimedia.org/wikipedia/en/7/7a/Brandi_Carlile_-_In_These_Silent_Days.png",
+      "rating": 8.5
+    },
+    {
+      "id": 1,
+      "name": "In These Silent Days",
+      "artist": "Brandi Carlile",
+      "tracks" : [
         "Placeholder",
         "Placeholder",
         "Placeholder",

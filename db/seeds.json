@@ -1,25 +1,250 @@
 {
   "albums": [
-    {
-      "id": 1,
-      "name": "In These Silent Days",
-      "artist": "Brandi Carlile",
-      "tracks" : [
-        "Right on Time",
-        "You and Me on the Rock (featuring Lucius)",
-        "This Time Tomorrow",
-        "Broken Horses",
-        "Letter to the Past",
-        "Mama Werewolf",
-        "When You're Wrong",
-        "Stay Gentle",
-        "Sinners, Saints and Fools",
-        "Throwing Good After Bad"
-      ],
-      "image": "https://upload.wikimedia.org/wikipedia/en/7/7a/Brandi_Carlile_-_In_These_Silent_Days.png",
-      "rating": 8.5
-    },
-    {
-
-  ]
+  {
+    "id": 1,
+    "name": "In These Silent Days",
+    "artist": "Brandi Carlile",
+    "tracks" : [
+      "Right on Time",
+      "You and Me on the Rock (featuring Lucius)",
+      "This Time Tomorrow",
+      "Broken Horses",
+      "Letter to the Past",
+      "Mama Werewolf",
+      "When You're Wrong",
+      "Stay Gentle",
+      "Sinners, Saints and Fools",
+      "Throwing Good After Bad"
+    ],
+    "image": "https://upload.wikimedia.org/wikipedia/en/7/7a/Brandi_Carlile_-_In_These_Silent_Days.png",
+    "rating": 8.5
+  },
+  {
+    "id": 2,
+    "name": "Placeholder",
+    "artist": "Placeholder",
+    "tracks" : [
+      "Placeholder",
+      "Placeholder",
+      "Placeholder",
+      "Placeholder",
+      "Placeholder",
+      "Placeholder",
+      "Placeholder",
+      "Placeholder",
+      "Placeholder",
+      "Placeholder"
+    ],
+    "image": "Placeholder",
+    "rating": 8.5
+  },
+  {
+    "id": 3,
+    "name": "Placeholder",
+    "artist": "Placeholder",
+    "tracks" : [
+      "Placeholder",
+      "Placeholder",
+      "Placeholder",
+      "Placeholder",
+      "Placeholder",
+      "Placeholder",
+      "Placeholder",
+      "Placeholder",
+      "Placeholder",
+      "Placeholder"
+    ],
+    "image": "Placeholder",
+    "rating": 8.5
+  },
+  {
+    "id": 4,
+    "name": "Divide",
+    "artist": "Ed Sheeran",
+    "tracks" : [
+      "Eraser",
+      "Castle on The Hill",
+      "Dive",
+      "Shape of You",
+      "Perfect",
+      "Galway Girl",
+      "Happier",
+      "New Man",
+      "Hearts Don't Break Around Here",
+      "What Do I Know?",
+      "How Would You Feel",
+      "Supermarket Flowers",
+      "Barcelona",
+      "Bibia Be Ye Ye",
+      "Nancy Mulligan",
+      "Save Myself"
+    ],
+    "image": "https://upload.wikimedia.org/wikipedia/en/4/45/Divide_cover.png",
+    "rating": 8.4
+  },
+  {
+    "id": 5,
+    "name": "Stories",
+    "artist": "Avicii",
+    "tracks" : [
+      "Waiting For Love",
+      "Talk to Myself",
+      "Touch Me",
+      "Ten More Days",
+      "For a Better Day",
+      "Broken Arrows",
+      "True Believer",
+      "City Lights",
+      "Pure Grinding",
+      "Sunset Jesus",
+      "Can't Catch Me",
+      "Somewhere in Stockholm",
+      "Trouble",
+      "Gonna Love Ya"
+    ],
+    "image": "https://upload.wikimedia.org/wikipedia/en/c/c7/Avicii-Stories-2015-1200x1200.png",
+    "rating": 7.9
+  },
+  {
+    "id": 6,
+    "name": "Stoney",
+    "artist": "Post Malone",
+    "tracks" : [
+      "Broken Whiskey Glass",
+      "Big Lie",
+      "Deja Vu",
+      "No Option",
+      "Cold",
+      "White Iverson",
+      "I Fall Apart",
+      "Patient",
+      "Go Flex",
+      "Feel",
+      "Too Young",
+      "Congratulations",
+      "Up There",
+      "Yours Truly, Austin Post",
+      "Leave",
+      "Hit This Hard",
+      "Money Made Me Do It",
+      "Feeling Whitney"
+    ],
+    "image": "https://upload.wikimedia.org/wikipedia/en/7/72/Stoneyalbum.jpg",
+    "rating": 8.0
+  },
+  {
+    "id": 7,
+    "name": "Placeholder",
+    "artist": "Placeholder",
+    "tracks" : [
+      "Placeholder",
+      "Placeholder",
+      "Placeholder",
+      "Placeholder",
+      "Placeholder",
+      "Placeholder",
+      "Placeholder",
+      "Placeholder",
+      "Placeholder",
+      "Placeholder"
+    ],
+    "image": "Placeholder",
+    "rating": 8.5
+  },
+  {
+    "id": 8,
+    "name": "Placeholder",
+    "artist": "Placeholder",
+    "tracks" : [
+      "Placeholder",
+      "Placeholder",
+      "Placeholder",
+      "Placeholder",
+      "Placeholder",
+      "Placeholder",
+      "Placeholder",
+      "Placeholder",
+      "Placeholder",
+      "Placeholder"
+    ],
+    "image": "Placeholder",
+    "rating": 8.5
+  },
+ {
+"id": 9,
+"name": "Placeholder",
+"artist": "Placeholder",
+"tracks" : [
+  "Placeholder",
+  "Placeholder",
+  "Placeholder",
+  "Placeholder",
+  "Placeholder",
+  "Placeholder",
+  "Placeholder",
+  "Placeholder",
+  "Placeholder",
+  "Placeholder"
+],
+"image": "Placeholder",
+"rating": 8.5
+},
+{
+"id": 10,
+"name": "Placeholder",
+"artist": "Placeholder",
+"tracks" : [
+  "Placeholder",
+  "Placeholder",
+  "Placeholder",
+  "Placeholder",
+  "Placeholder",
+  "Placeholder",
+  "Placeholder",
+  "Placeholder",
+  "Placeholder",
+  "Placeholder"
+],
+"image": "Placeholder",
+"rating": 8.5
+},
+{
+"id": 11,
+"name": "Placeholder",
+"artist": "Placeholder",
+"tracks" : [
+  "Placeholder",
+  "Placeholder",
+  "Placeholder",
+  "Placeholder",
+  "Placeholder",
+  "Placeholder",
+  "Placeholder",
+  "Placeholder",
+  "Placeholder",
+  "Placeholder"
+],
+"image": "Placeholder",
+"rating": 8.5
+},
+{
+"id": 12,
+"name": "Placeholder",
+"artist": "Placeholder",
+"tracks" : [
+  "Placeholder",
+  "Placeholder",
+  "Placeholder",
+  "Placeholder",
+  "Placeholder",
+  "Placeholder",
+  "Placeholder",
+  "Placeholder",
+  "Placeholder",
+  "Placeholder"
+],
+"image": "Placeholder",
+"rating": 8.5
+}
+]
 }

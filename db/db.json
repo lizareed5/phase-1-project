@@ -43,6 +43,27 @@
       ],
       "image": "https://upload.wikimedia.org/wikipedia/en/a/ad/Beyonc%C3%A9_-_Renaissance.png",
       "rating": 8.7
+    },
+    {
+      "id": 3,
+      "name": "30",
+      "artist": "Adele",
+      "tracks" : [
+        "Strangers By Nature",
+        "Easy On Me",
+        "My Little Love",
+        "Cry Your Heart Out",
+        "Oh My God",
+        "Can I Get It",
+        "I Drink Wine",
+        "All Night Parking (with Erroll Garner) Interlude",
+        "Woman Like Me",
+        "Hold On",
+        "To Be Loved",
+        "Love Is A Game"
+      ],
+      "image": "https://assets.vogue.com/photos/6193ef9136fdadae89a07fe9/1:1/w_3000,h_3000,c_limit/COVER_no-text_10X10_RGB.jpg",
+      "rating": 8.8
     }
   ]
 }

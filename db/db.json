@@ -21,22 +21,28 @@
     },
     {
       "id": 2,
-      "name": "In These Silent Days",
-      "artist": "Brandi Carlile",
+      "name": "RENAISSANCE",
+      "artist": "Beyoncé",
       "tracks" : [
-        "Right on Time",
-        "You and Me on the Rock (featuring Lucius)",
-        "This Time Tomorrow",
-        "Broken Horses",
-        "Letter to the Past",
-        "Mama Werewolf",
-        "When You're Wrong",
-        "Stay Gentle",
-        "Sinners, Saints and Fools",
-        "Throwing Good After Bad"
+        "I'M THAT GIRL",
+        "COZY",
+        "ALIEN SUPERSTAR",
+        "CUFF IT",
+        "ENERGY (featuring Beam)",
+        "BREAK MY SOUL",
+        "CHURCH GIRL",
+        "PLASTIC OFF THE SOFA",
+        "VIRGO'S GROOVE",
+        "MOVE (featuring Grace Jones & Tems",
+        "HEATED",
+        "THIQUE",
+        "ALL UP IN YOUR MIND",
+        "AMERICA HAS A PROBLEM",
+        "PURE/HONEY",
+        "SUMMER RENAISSANCE"
       ],
-      "image": "https://upload.wikimedia.org/wikipedia/en/7/7a/Brandi_Carlile_-_In_These_Silent_Days.png",
-      "rating": 8.5
+      "image": "https://upload.wikimedia.org/wikipedia/en/a/ad/Beyonc%C3%A9_-_Renaissance.png",
+      "rating": 8.7
     }
   ]
 }

@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const url = "http://localhost:3000/albums"
 let albumList = document.querySelector("#album-list")
-let albumImg = document.querySelector("#nav-img")
+// let albumImg = document.querySelector("#nav-img")
 let albumHeaderLogo = document.querySelector(".album-covers")
 let albumInfo = document.querySelector("#album-info")
 let albumTitle = document.querySelector("#title")
@@ -27,26 +27,42 @@ let ratingAvrg = document.querySelector("#average-rating-amt")
 let toggleBtn = document.querySelector("#light-dark-mode-toggle")
 let currentAlbum
 
-
-
-
 // fetch request on url
-
 const getAlbums = () => {
     fetch(url)
     .then(response => response.json())
-    .then(data => console.log(data))
+    // use .map to itirate over data
+    .then((data) => {
+        data.map(currentAlbum => renderAlbums(currentAlbum))
+        mainAlbumInfo(data[0])
+        currentAlbum = data[0].id
+    })
 }
 
-// use .map to itirate over data
-
-
-
 // create function to add images to "nav" element from html
+// make an eventlistener to images shown to display details and make image larger on "body html" element
+const renderAlbums = (currentAlbum) => {
+    let albumImg = document.createElement("img")
+    albumImg.src = currentAlbum.image
+    albumImg.alt = currentAlbum.albumTitle
+    albumList.appendChild(albumImg)
+    albumImg.addEventListener("click", () => {
+        mainAlbumInfo(currentAlbum)
+    })
+}
 
-
-
-// make an eventlistener to images shown to display detals and make image larger on "body html" element
+// create function to pull up album info into the main album that's been clicked
+const mainAlbumInfo = (album) => {
+    albumMainImg.src = album.image
+    albumMainImg.alt = album.name
+    albumTitle.innerText = album.name
+    albumArtist.innerText = album.artist
+    trackList.innerText = album.tracks
+    artistName.innerText = album.artist
+    albumDesc.innerText = album.description
+    albumRev.innerText = album.reviews
+    likeBtn.innerText = "❤️"
+}
 
 
 

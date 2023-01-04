@@ -65,12 +65,13 @@ const mainAlbumInfo = (album) => {
     albumTitle.innerText = album.name
     albumArtist.innerText = album.artist
     songList.innerText = album.tracks
+    ratingAvrg.innerText = album.rating + `/10`
     // songList.innerText = album.forEach(tracks)
     // iterate over this array but the above doesn't work
     artistName.innerText = album.artist
     albumDesc.innerText = album.description
     albumRev.innerText = album.reviews
-    likeBtn.innerText = "❤️"
+    likeBtn.innerText = "Like"
 }
 
 // create a submit button that allows user to add review

@@ -1,6 +1,9 @@
 // add eventlistener for DOMCONTENTLOADED
 document.addEventListener("DOMContentLoaded", () => {
     getAlbums()
+    addReview()
+    addAlbum()
+    addRating()
 })
 
 // set our consts e.g. (const url = "http://localhost:3000", const album = ... , const artist = ...)
@@ -64,18 +67,57 @@ const mainAlbumInfo = (album) => {
     likeBtn.innerText = "❤️"
 }
 
-
-
 // create a submit button that allows user to add review
+const addReview = () => {
+    newReviewForm.addEventListener("submit", (e) => {
+        e.preventDefault()
+        newReview = e.target.review.value
+        albumRev.append(newReview)
+        keepReview(newReview)
+    })
+}
+
+const keepReview = (e) => {
+    fetch(`${url}/${currentAlbum.id}`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+        },
+        body: JSON.stringify(newReview),
+    }
+    )}
+
+// add edit button to change their review: PATRICK
+
+// add a new album
+const addAlbum = () => {
+    addAlbumForm.addEventListener("submit", (e) => {
+        e.preventDefault()
+        let albumObj = {
+            album: e.target.album.value,
+            artist: e.target.artist.value,
+            tracklist: e.target.tracklist.value,
+            image: e.target.image.value,
+            rating: e.target.rating.value,
+            description: e.target.description.value
+            //tracklist and rating aren't working rn
+        }
+        renderAlbums(albumObj)
+    })
+}
+
+// add a new rating
+const addRating = () => {
+    newRatingForm.addEventListener("submit", (e) => {
+            e.preventDefault()
+            ratingAvrg.innerText = e.target.rating.value
+        })
+}
+
+
+// add delete button to delete their review: PATRICK
 
 
 
-// add edit button to change their review
-
-
-
-// add delete button to delete their review
-
-
-
-// light and dark mode toggle button at the top of the page (header)
+// light and dark mode toggle button at the top of the page (header): PATRICK

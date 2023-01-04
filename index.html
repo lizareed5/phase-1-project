@@ -7,11 +7,18 @@
 </head>
 <body>
   <div id="top">
-    <img class="album-covers" />
+    <img class="album-covers" src="assets/record.png"/>
+    <p id="lightanddark">Light & Dark Mode</p>
+    <div id="light-dark-mode-toggle">
+      <label class="switch">
+        <input type="checkbox">
+        <span class="slider round"></span>
+      </label>
+    </div>
     <!-- fill in img/logo for the src above if we want a picture -->
   </div>
   <hr/>
-  
+
   <nav id="album-list">
     <!-- <img id="nav-img" src="" /> -->
     <!-- i think the src will work for this but we will see! -->
@@ -21,7 +28,7 @@
     <div>
       <h1 id="title"></h1>
       <h2 id="artist"></h2>
-      <button id="like"></button>
+      <button class="submit" id="like"></button>
       
     </div>
     <img id="main-image" src="" />
@@ -43,11 +50,11 @@
       </li>
       <!-- remove the bullets if needed -->
     </ul>
-    <button id="edit-review">edit review</button>
+    <button class="submit" id="edit-review">edit review</button>
   </div>
 
   <div id="add-review">
-    <form id="new-review">
+    <form class="form" id="new-review">
       <label for="review">new review:</label>
       <textarea id="review"></textarea>
       <button class="submit" type="submit">post</button>
@@ -132,14 +139,8 @@
   <div id="ratings-combined">
     <h1 id="average-rating-title">average rating</h1>
     <h2 id="average-rating-amt"></h2>
-    <h3 id="out-of-ten">/10</h3>
   </div>
 
-  <div id="light-dark-mode-toggle">
-    <label class="switch">
-      <input type="checkbox">
-      <span class="slider round"></span>
-    </label>
-  </div>
+  
 </body>
 </html>

@@ -193,7 +193,9 @@
       "Till Dawn"
     ],
     "image": "https://upload.wikimedia.org/wikipedia/en/9/96/The_Weeknd_-_Trilogy.png",
-    "rating": 10
+    "rating": 10,
+    "description":"This set gathers the three 2011 mixtapes from Toronto R&B singer Abel Tefsaye and adds three new songs along with new mixes and mastering. Trilogy as a whole sets up a narrative that was previously only implied and has more force when heard in this form.",
+    "reviews":["Trilogy's triumph is in how it makes its three hours feel necessary to fully embrace it all, to acknowledge its existence inside ourselves and to vicariously live through it as art.","The production sounded great to start with, and the new material is unexceptional, but if you didn't pick up the mixtapes when they were going free, and can handle 160 minutes of beautifully crafted nihilism, this is an essential buy."]
   },
   {
     "id": 8,
@@ -214,7 +216,9 @@
       "Muse" 
     ],
     "image": "https://upload.wikimedia.org/wikipedia/en/d/de/PartyNextDoorTwoCover.png",
-    "rating": 8.5
+    "rating": 8.5,
+    "description":"Mississauga-born singer and producer Jahron Brathwaite's second album as PARTYNEXTDOOR matches the Drake affiliate's self-assured cockiness with an increased benevolent streak. It functions something like Toronto's answer to ratch&B, replacing the dirtbag charm (or ugliness, as some argue) of someone like Ty Dolla $ign with a more benign disposition.",
+    "reviews": ["PARTYNEXTDOOR TWO succeeds, much like its predecessor, largely thanks to Brathwaite’s aptitude for mood.", "One gets the sense that as an artist, PND has yet to even scratch the surface of his potential. Two serves as evidence of such; perhaps the third and successive installments will see continued artistic progression. Or not.)"]
   },
  {
 "id": 9,
@@ -238,7 +242,10 @@
   "Ghetto Boy"
 ],
 "image": "https://upload.wikimedia.org/wikipedia/en/6/61/Tinashe_-_Nightride.png",
-"rating": 8.9
+"rating": 8.9,
+"description":"Tinashe's latest release is another helping of the moody, ominous R&B that she has quietly made her name on.",
+"reviews":["It's when Nightride decides to shift gears in the latter half that the outing gets really exhilarating.","Nothing here has the upbeat pop appeal of “2 On” or any of the unincluded post-Aquarius singles, but this is clearly designed for a different purpose."]
+
 }
   ]
 }

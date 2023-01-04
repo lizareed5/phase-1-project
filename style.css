@@ -1,4 +1,4 @@
-/*body background color */
+/*body background colors and dark mode */
 body {
     background: #FFFDE7;
     color: #414141;
@@ -6,11 +6,11 @@ body {
 }
 
 .dark-mode {
-    background: black;
-    color: white;
+    background: #414141;
+    color: #FFFDE7;
 }
 
-  #light-dark-mode-toggle{
+#light-dark-mode-toggle{
     text-align: center;
     padding-top: .05px;
 }
@@ -20,6 +20,7 @@ body {
   font-family: Georgia, 'Times New Roman', Times, serif;
   padding-bottom: 0px;
 }
+
 /* The switch - the box around the slider */
 .switch {
     position: relative;
@@ -82,13 +83,22 @@ body {
   .slider.round:before {
     border-radius: 50%;
   }
-
-  #album-list {
-    display:flex;
-    justify-content: center;
+  
+.album-covers{
+  width: 125px;
+  height: 125px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
+
+#album-list {
+    display: flex;
+    overflow: auto;
+}
+
 #album-list img {
-  width: 300px;
+  width: 175px;
   height: auto;
   margin: 10px;
 }
@@ -98,19 +108,73 @@ body {
   cursor: pointer;
 }
 
+#album-info {
+  float: right;
+  width: 300px;
+  padding: 8px;
+  padding-top: auto;
+}
+
+#album-info img {
+  padding-top: 10px;
+}
+
+#artist-description {
+  float: left;
+  width: 300px;
+  padding: 8px;
+}
+
+#album-reviews {
+  float: left;
+  width: 300px;
+  padding: 8px;
+  padding-top: 0px;
+}
+
+#new-review {
+  float: left;
+  width: 300px;
+  padding: 8px;
+}
+
+#add-album {
+  float: left;
+  width: 300px;
+  padding: 8px;
+}
+
+#add-rating {
+  float: left;
+  width: 300px;
+  padding: 8px;
+}
+
+#ratings-combined {
+  float: left;
+  width: 300px;
+  padding: 8px;
+}
+
 .input-text {
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .submit {
   font-family: Georgia, 'Times New Roman', Times, serif;
+  border-color: #414141;
+  background-color: #414141;
+  color:#FFFDE7;
+  text-align: center;
+  padding: 5px;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
-.album-covers{
-  width: 125px;
-  height: 125px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+.submit:hover {
+  background-color: #FFFDE7;
+  color: #414141;
+  border-color: #414141;
 }
+
 

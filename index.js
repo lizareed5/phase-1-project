@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     addReview()
     addAlbum()
     addRating()
+    handleLike()
     // deleteAlbum()
 })
 
@@ -16,14 +17,12 @@ let albumHeaderLogo = document.querySelector(".album-covers")
 let albumInfo = document.querySelector("#album-info")
 let albumTitle = document.querySelector("#title")
 let albumArtist = document.querySelector("#artist")
-let liked = document.querySelector("#like")
+let liked = document.querySelector("#like-btn")
 let albumMainImg = document.querySelector("#main-image")
 let trackList = document.querySelector("#track-list")
-let songList = document.querySelector("#songs")
 let albumDesc = document.querySelector("#album-bio")
 let artistName = document.querySelector("#artist-name")
 let albumRev = document.querySelector("#review-list")
-let indvRevs = document.querySelector("#indv-reviews")
 let editBtn = document.querySelector("#edit-review")
 let newReviewForm = document.querySelector("#new-review")
 let newReviewBtn = document.querySelector("#review-btn")
@@ -32,8 +31,7 @@ let newRatingForm = document.querySelector("#new-rating")
 let ratingAvrg = document.querySelector("#average-rating-amt")
 let toggleBtn = document.querySelector("#light-dark-mode-toggle")
 let deleteBtn = document.querySelector("#delete")
-let currentAlbum
-let newReview
+let globalAlbum
 
 // fetch request on url
 const getAlbums = () => {
@@ -43,7 +41,7 @@ const getAlbums = () => {
     .then((data) => {
         data.map(currentAlbum => renderAlbums(currentAlbum))
         mainAlbumInfo(data[0])
-        currentAlbum = data[0].id
+        globalAlbum = data[0].id
     })
 }
 
@@ -56,7 +54,8 @@ const renderAlbums = (currentAlbum) => {
     albumList.appendChild(albumImg)
     albumImg.addEventListener("click", () => {
         mainAlbumInfo(currentAlbum)
-        console.log(currentAlbum.id)
+        globalAlbum = currentAlbum.id
+        // console.log(globalAlbum)
     })
 }
 
@@ -66,33 +65,35 @@ const mainAlbumInfo = (album) => {
     albumMainImg.alt = album.name
     albumTitle.innerText = album.name
     albumArtist.innerText = album.artist
-    songList.innerText = album.tracks
     ratingAvrg.innerText = album.rating + `/10`
-    // songList.innerText = album.forEach(tracks)
-    // iterate over this array but the above doesn't work
+    album.tracks.forEach(track => {
+        let songLi = document.createElement('li')
+        songLi.innerText = track
+        trackList.append(songLi)
+    })
     artistName.innerText = album.artist
     albumDesc.innerText = album.description
-    albumRev.innerText = album.reviews
-    if (album.liked === "true"){
-        "Liked"
-    } else {
-        "Unliked"
-    }
+    album.reviews.forEach(review => {
+        let reviewLi = document.createElement('li')
+        reviewLi.innerText = review
+        albumRev.append(reviewLi)
+    })
+    liked.textContent = album.liked? "liked":"not liked"
 }
 
 // create a submit button that allows user to add review
 const addReview = () => {
     newReviewForm.addEventListener("submit", (e) => {
         e.preventDefault()
+        let newReview = document.createElement('li')
         newReview = e.target.review.value
         albumRev.append(newReview)
-        //we might need to do the same thing as "songlist" iteration once we figure that out
         keepReview(newReview)
     })
 }
 
-const keepReview = (e) => {
-    fetch(`${url}/${currentAlbum}`, {
+const keepReview = (globalAlbum) => {
+    fetch(`${url}/${globalAlbum}`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -145,7 +146,7 @@ const addRating = () => {
 
 // add delete button to delete their album: PATRICK
 // const deleteAlbum = (albumObj) => {
-//     fetch (url, {
+    // fetch (`${url}/${globalAlbum}`, {
 //         method: "DELETE",
 //         headers: {
 //             'Content-Type': 'application/json',
@@ -158,9 +159,14 @@ const addRating = () => {
 //      })
 // }
 
-
 // like button should toggle liked/unliked
-
+const handleLike = () => {
+    liked.addEventListener('click', (albums) => {
+        console.log(globalAlbum)
+        albums.liked = !albums.liked
+        liked.textContent = albums.liked? "liked":"not liked"
+    })
+}
 
 // light and dark mode toggle button at the top of the page (header): PATRICK
 

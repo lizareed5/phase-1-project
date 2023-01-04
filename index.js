@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     addReview()
     addAlbum()
     addRating()
+    // deleteAlbum()
 })
 
 // set our consts e.g. (const url = "http://localhost:3000", const album = ... , const artist = ...)
@@ -15,7 +16,7 @@ let albumHeaderLogo = document.querySelector(".album-covers")
 let albumInfo = document.querySelector("#album-info")
 let albumTitle = document.querySelector("#title")
 let albumArtist = document.querySelector("#artist")
-let likeBtn = document.querySelector("#like")
+let liked = document.querySelector("#like")
 let albumMainImg = document.querySelector("#main-image")
 let trackList = document.querySelector("#track-list")
 let songList = document.querySelector("#songs")
@@ -30,6 +31,7 @@ let addAlbumForm = document.querySelector("#new-album")
 let newRatingForm = document.querySelector("#new-rating")
 let ratingAvrg = document.querySelector("#average-rating-amt")
 let toggleBtn = document.querySelector("#light-dark-mode-toggle")
+let deleteBtn = document.querySelector("#delete")
 let currentAlbum
 let newReview
 
@@ -71,7 +73,11 @@ const mainAlbumInfo = (album) => {
     artistName.innerText = album.artist
     albumDesc.innerText = album.description
     albumRev.innerText = album.reviews
-    likeBtn.innerText = "Like"
+    if (album.liked === "true"){
+        "Liked"
+    } else {
+        "Unliked"
+    }
 }
 
 // create a submit button that allows user to add review
@@ -137,7 +143,20 @@ const addRating = () => {
 }
 
 
-// add delete button to delete their review: PATRICK
+// add delete button to delete their album: PATRICK
+// const deleteAlbum = (albumObj) => {
+//     fetch (url, {
+//         method: "DELETE",
+//         headers: {
+//             'Content-Type': 'application/json',
+//             'Accept': 'application/json'
+//         },
+//         body: JSON.stringify(albumObj),
+//     })
+//     deleteBtn.addEventListener("click",() => {
+//         deleteAlbum(albumObj) 
+//      })
+// }
 
 
 // like button should toggle liked/unliked

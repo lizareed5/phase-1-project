@@ -18,9 +18,11 @@ let albumArtist = document.querySelector("#artist")
 let likeBtn = document.querySelector("#like")
 let albumMainImg = document.querySelector("#main-image")
 let trackList = document.querySelector("#track-list")
+let songList = document.querySelector("#songs")
 let albumDesc = document.querySelector("#album-bio")
 let artistName = document.querySelector("#artist-name")
 let albumRev = document.querySelector("#review-list")
+let indvRevs = document.querySelector("#indv-reviews")
 let editBtn = document.querySelector("#edit-review")
 let newReviewForm = document.querySelector("#new-review")
 let newReviewBtn = document.querySelector("#review-btn")
@@ -29,6 +31,7 @@ let newRatingForm = document.querySelector("#new-rating")
 let ratingAvrg = document.querySelector("#average-rating-amt")
 let toggleBtn = document.querySelector("#light-dark-mode-toggle")
 let currentAlbum
+let newReview
 
 // fetch request on url
 const getAlbums = () => {
@@ -51,6 +54,7 @@ const renderAlbums = (currentAlbum) => {
     albumList.appendChild(albumImg)
     albumImg.addEventListener("click", () => {
         mainAlbumInfo(currentAlbum)
+        console.log(currentAlbum.id)
     })
 }
 
@@ -60,7 +64,9 @@ const mainAlbumInfo = (album) => {
     albumMainImg.alt = album.name
     albumTitle.innerText = album.name
     albumArtist.innerText = album.artist
-    trackList.innerText = album.tracks
+    songList.innerText = album.tracks
+    // songList.innerText = album.forEach(tracks)
+    // iterate over this array but the above doesn't work
     artistName.innerText = album.artist
     albumDesc.innerText = album.description
     albumRev.innerText = album.reviews
@@ -73,12 +79,13 @@ const addReview = () => {
         e.preventDefault()
         newReview = e.target.review.value
         albumRev.append(newReview)
+        //we might need to do the same thing as "songlist" iteration once we figure that out
         keepReview(newReview)
     })
 }
 
 const keepReview = (e) => {
-    fetch(`${url}/${currentAlbum.id}`, {
+    fetch(`${url}/${currentAlbum}`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -90,21 +97,34 @@ const keepReview = (e) => {
 
 // add edit button to change their review: PATRICK
 
-// add a new album
+// add a new album, render new album, keep new album
 const addAlbum = () => {
     addAlbumForm.addEventListener("submit", (e) => {
         e.preventDefault()
         let albumObj = {
-            album: e.target.album.value,
+            name: e.target.name.value,
             artist: e.target.artist.value,
-            tracklist: e.target.tracklist.value,
+            tracks: e.target.tracks.value,
             image: e.target.image.value,
             rating: e.target.rating.value,
-            description: e.target.description.value
+            description: e.target.description.value,
+            reviews: e.target.reviews.value
             //tracklist and rating aren't working rn
         }
-        renderAlbums(albumObj)
+        keepNewAlbum(albumObj)
     })
+}
+
+const keepNewAlbum = (albumObj) => {
+    fetch (url, {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: JSON.stringify(albumObj),
+    })
+    renderAlbums(albumObj)
 }
 
 // add a new rating
@@ -118,6 +138,8 @@ const addRating = () => {
 
 // add delete button to delete their review: PATRICK
 
+
+// like button should toggle liked/unliked
 
 
 // light and dark mode toggle button at the top of the page (header): PATRICK

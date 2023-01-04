@@ -26,7 +26,8 @@
     </div>
     <img id="main-image" src="" />
     <ol id="track-list">
-      <li></li>
+      <li id="songs">
+      </li>
     </ol>
     <!-- not sure if we need to add src above or not -->
   </div>
@@ -38,7 +39,8 @@
   
   <div id="album-reviews">
     <ul id="review-list">
-      <li></li>
+      <li id="indv-reviews">
+      </li>
       <!-- remove the bullets if needed -->
     </ul>
     <button id="edit-review">edit review</button>
@@ -56,7 +58,7 @@
     <form id="new-album">
       <input
         type="text"
-        name="album"
+        name="name"
         value=""
         placeholder="enter album name"
         class="input-text"
@@ -72,7 +74,7 @@
     <br />
     <input
       type="text"
-      name="tracklist"
+      name="tracks"
       value=""
       placeholder="enter tracklist, user enter for a new line"
       class="input-text"
@@ -101,6 +103,14 @@
     placeholder="enter album description"
     class="input-text"
   />
+  <br />
+  <input
+  type="text"
+  name="reviews"
+  value=""
+  placeholder="enter album review"
+  class="input-text"
+/>
   <br />
   <input
     type="submit"

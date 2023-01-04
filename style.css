@@ -1,6 +1,6 @@
 body {
     background: white;
-    color: blue;
+    color: rgb(0, 0, 0);
 }
 
 .dark-mode {
@@ -70,3 +70,5 @@ body {
   .slider.round:before {
     border-radius: 50%;
   }
+
+

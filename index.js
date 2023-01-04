@@ -163,3 +163,10 @@ const addRating = () => {
 
 
 // light and dark mode toggle button at the top of the page (header): PATRICK
+
+const toggle = document.getElementById('light-dark-mode-toggle');
+const body = document.querySelector('body');
+
+toggle.addEventListener('click', function(){
+    
+})

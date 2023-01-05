@@ -32,6 +32,7 @@ let ratingAvrg = document.querySelector("#average-rating-amt")
 let toggleBtn = document.querySelector("#light-dark-mode-toggle")
 let deleteBtn = document.querySelector("#delete")
 let globalAlbum
+let likedAlbum
 
 // fetch request on url
 const getAlbums = () => {
@@ -55,6 +56,7 @@ const renderAlbums = (currentAlbum) => {
     albumImg.addEventListener("click", () => {
         mainAlbumInfo(currentAlbum)
         globalAlbum = currentAlbum.id
+        likedAlbum = currentAlbum.liked
         // console.log(globalAlbum)
     })
 }
@@ -162,11 +164,18 @@ const addRating = () => {
 // like button should toggle liked/unliked
 const handleLike = () => {
     liked.addEventListener('click', (albums) => {
-        console.log(globalAlbum)
-        albums.liked = !albums.liked
-        liked.textContent = albums.liked? "liked":"not liked"
-    })
+        console.log(likedAlbum)
+        likedAlbum = !likedAlbum
+        if(likedAlbum){
+        liked.textContent = "unliked"
+        }
+        else{
+        liked.textContent = "liked"
+        }}
+    )
 }
+
+
 
 // light and dark mode toggle button at the top of the page (header): PATRICK
 

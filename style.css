@@ -168,6 +168,11 @@ body {
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
+#track-box {
+  height: 60px;
+  word-wrap: break-word;
+}
+
 #new-album-rating {
   width: 145px;
 }

@@ -189,20 +189,24 @@ const addRating = () => {
 
 
 // add delete button to delete their album: PATRICK
-// const deleteAlbum = () => {
-    // fetch (`${url}/${globalAlbum}`, {
-//         method: "DELETE",
-//         headers: {
-//             'Content-Type': 'application/json',
-//             'Accept': 'application/json'
-//         },
-//         body: JSON.stringify(albumObj),
-//     })
-//     deleteBtn.addEventListener("click",() => {
-//         deleteAlbum(albumObj) 
-//      })
-// }
+const deleteAlbum = () => {
+    document.querySelector(`IDK YET${globalAlbum}`).remove() 
 
+    fetch(`${url}/${globalAlbum}`, {
+        method: 'DELETE'
+    })
+    .then(res => res.json())
+    .then(data => { 
+        
+        showDetails({ 
+            name: '',
+            artist: 0,
+            tracks: '',
+            image: '',
+            reviews: ''
+        })
+    })
+}
 // like button should toggle liked/unliked
 const handleLike = () => {
     liked.addEventListener('click', (albums) => {

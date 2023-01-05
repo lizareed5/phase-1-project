@@ -279,13 +279,32 @@
       "liked": false
     },
     {
-      "name": "Dance Fever",
-      "artist": "Florence + the Machine",
-      "tracks": "King, Free, Choreomania",
-      "image": "https://upload.wikimedia.org/wikipedia/en/4/41/Florence_and_the_Machine_-_Dance_Fever.png",
-      "description": "4th album",
-      "rating": "3",
-      "reviews": "great, amazing",
+      "name": "More Life",
+      "artist": "Drake",
+      "tracks": [
+        "All Me",
+        " Pound Cake",
+        " From Time",
+        " Wu-Tang Forever",
+        " Come Thru",
+        " Started From the Bottom",
+        " Furthest Thing",
+        " Too Much",
+        " 305 to My City",
+        " Hold On",
+        " We're Going Home",
+        " Worst Behavior",
+        " Connect",
+        " The Language",
+        " Own It",
+        " Tuscan Leather"
+      ],
+      "image": "https://upload.wikimedia.org/wikipedia/en/4/42/Drake_-_Nothing_Was_the_Same_cover.png",
+      "description": "Nothing Was the Same is the third studio album by Canadian rapper Drake.",
+      "rating": "9",
+      "reviews": [
+        "One of the Best Albums I've heard!"
+      ],
       "liked": false,
       "id": 10
     }

@@ -90,7 +90,7 @@ const mainAlbumInfo = (album) => {
     })
     // reviewLi.innerText = "";
     // songList.innerText = "";
-    liked.textContent = album.liked? "liked":"not liked"
+    liked.textContent = album.liked? "liked":"unliked"
 }
 
 // create a submit button that allows user to add review
@@ -142,16 +142,17 @@ const revealAlbumForm = () => {
 const addAlbum = () => {
     addAlbumForm.addEventListener("submit", (e) => {
         e.preventDefault()
+        let newTrackList = e.target.tracks.value.split(',')
+        let newReviews = e.target.reviews.value.split(',')
         let albumObj = {
             name: e.target.name.value,
             artist: e.target.artist.value,
-            tracks: e.target.tracks.value,
+            tracks: newTrackList,
             image: e.target.image.value,
             description: e.target.description.value,
             rating: e.target.rating.value,
-            reviews: e.target.reviews.value,
+            reviews: newReviews,
             liked: false
-            //tracklist isn't working rn
         }
         console.log(albumObj.description)
         console.log(albumObj.reviews)
@@ -182,13 +183,13 @@ const keepNewAlbum = (albumObj) => {
 const addRating = () => {
     newRatingForm.addEventListener("submit", (e) => {
             e.preventDefault()
-            ratingAvrg.innerText = e.target.rating.value
+            ratingAvrg.innerText = e.target.rating.value + `/10`
         })
 }
 
 
 // add delete button to delete their album: PATRICK
-// const deleteAlbum = (albumObj) => {
+// const deleteAlbum = () => {
     // fetch (`${url}/${globalAlbum}`, {
 //         method: "DELETE",
 //         headers: {
@@ -205,13 +206,14 @@ const addRating = () => {
 // like button should toggle liked/unliked
 const handleLike = () => {
     liked.addEventListener('click', (albums) => {
-        console.log(likedAlbum)
+        // console.log(likedAlbum)
         likedAlbum = !likedAlbum
         if(likedAlbum){
         liked.textContent = "unliked"
         }
         else{
         liked.textContent = "liked"
+        
         }}
     )
 }

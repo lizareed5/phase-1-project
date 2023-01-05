@@ -36,6 +36,7 @@ let toggleBtn = document.querySelector("#light-dark-mode-toggle")
 let deleteBtn = document.querySelector("#delete")
 let globalAlbum
 let likedAlbum
+let albumReviews
 
 // fetch request on url
 const getAlbums = () => {
@@ -46,6 +47,8 @@ const getAlbums = () => {
         data.map(currentAlbum => renderAlbums(currentAlbum))
         mainAlbumInfo(data[0])
         globalAlbum = data[0].id
+        albumReviews = data[0].reviews
+        console.log(albumReviews)
     })
 }
 
@@ -94,14 +97,22 @@ const mainAlbumInfo = (album) => {
 const addReview = () => {
     newReviewForm.addEventListener("submit", (e) => {
         e.preventDefault()
-        let newReview = document.createElement('li')
-        newReview.innerText = e.target.review.value
-        albumRev.append(newReview)
+        let newReview = {
+            reviews: e.target.review.value
+        }
+        // reviews.push(newReview)
+        albumReviews = globalAlbum.reviews
+        console.log(albumReviews)
+        // let newReview = document.createElement('li')
+        // newReview.innerText = e.target.review.value
+        // albumRev.append(newReview)
         keepReview(newReview)
     })
 }
 
 const keepReview = (newReview) => {
+    console.log(newReview)
+    console.log(`${url}/${globalAlbum}`)
     fetch(`${url}/${globalAlbum}`, {
         method: "POST",
         headers: {
@@ -136,12 +147,15 @@ const addAlbum = () => {
             artist: e.target.artist.value,
             tracks: e.target.tracks.value,
             image: e.target.image.value,
-            rating: e.target.rating.value,
             description: e.target.description.value,
+            rating: e.target.rating.value,
             reviews: e.target.reviews.value,
             liked: false
             //tracklist isn't working rn
         }
+        console.log(albumObj.description)
+        console.log(albumObj.reviews)
+        console.log(albumObj.tracks)
         keepNewAlbum(albumObj)
         // let newTrackList = tracks.split(" ")
         // newTrackList.forEach(track => {

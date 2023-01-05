@@ -6,7 +6,9 @@ document.addEventListener("DOMContentLoaded", () => {
     addAlbum()
     addRating()
     handleLike()
-    // deleteAlbum()
+    deleteAlbum()
+   
+    // keepDeleteAlbum()
 })
 
 // set our consts e.g. (const url = "http://localhost:3000", const album = ... , const artist = ...)
@@ -31,6 +33,7 @@ let newAlbumBtn = document.querySelector("#add-a-new-album")
 let addAlbumForm = document.querySelector("#new-album")
 let newRatingForm = document.querySelector("#new-rating")
 let ratingAvrg = document.querySelector("#average-rating-amt")
+let avrgRatingTitle = document.getElementById('average-rating-title')
 ratingAvrg.setAttribute("id", "rating-avrg")
 let toggleBtn = document.querySelector("#light-dark-mode-toggle")
 let deleteBtn = document.querySelector("#delete")
@@ -182,24 +185,39 @@ const addRating = () => {
 
 
 // add delete button to delete their album: PATRICK
-const deleteAlbum = () => {
-    document.querySelector(`IDK YET${globalAlbum}`).remove() 
-
-    fetch(`${url}/${globalAlbum}`, {
-        method: 'DELETE'
-    })
-    .then(res => res.json())
-    .then(data => { 
+// const keepDeleteAlbum = () => {
+//     document.querySelector(`${globalAlbum}`).remove() 
+//     fetch(`${url}/${globalAlbum}`, {
+//         method: 'DELETE'
+//     })
+//     .then(res => res.json())
+//     .then(data => { 
         
-        showDetails({ 
-            name: '',
-            artist: 0,
-            tracks: '',
-            image: '',
-            reviews: ''
-        })
+//         showDetails({ 
+//             name: '',
+//             artist: 0,
+//             tracks: '',
+//             image: '',
+//             reviews: ''
+//         })
+//     })
+// }
+const deleteAlbum = () => {
+    deleteBtn.addEventListener("click", () => {
+    albumRev.remove()
+    albumInfo.remove()
+    albumDesc.remove()
+    albumArtist.remove()
+    ratingAvrg.remove()
+    albumTitle.remove()
+    avrgRatingTitle.remove()
+    artistName.remove()
+    albumMainImg.remove()
+    // albumList.remove()
+    console.log(albumRev)
     })
 }
+
 // like button should toggle liked/unliked
 const handleLike = () => {
     liked.addEventListener('click', (albums) => {

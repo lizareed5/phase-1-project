@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     addAlbum()
     addRating()
     handleLike()
-    deleteAlbum()
+    // deleteAlbum()
    
     // keepDeleteAlbum()
 })
@@ -38,6 +38,7 @@ ratingAvrg.setAttribute("id", "rating-avrg")
 let toggleBtn = document.querySelector("#light-dark-mode-toggle")
 let deleteBtn = document.querySelector("#delete")
 let globalAlbum
+let albumId
 let likedAlbum
 let albumReviews = []
 
@@ -49,7 +50,8 @@ const getAlbums = () => {
     .then((data) => {
         data.map(currentAlbum => renderAlbums(currentAlbum))
         mainAlbumInfo(data[0])
-        globalAlbum = data[0].id
+        globalAlbum = data[0]
+        albumId = data[0].id
     })
 }
 
@@ -62,9 +64,15 @@ const renderAlbums = (currentAlbum) => {
     albumList.appendChild(albumImg)
     albumImg.addEventListener("click", () => {
         mainAlbumInfo(currentAlbum)
-        globalAlbum = currentAlbum.id
+        albumId = currentAlbum.id
+        globalAlbum = currentAlbum
         likedAlbum = currentAlbum.liked
+        // deleteBtn.addEventListener("click", () => {
+        //     globalAlbum.innerHTML = " "
+        // })
     })
+        
+
 }
 
 // create function to pull up album info into the main album that's been clicked
@@ -96,11 +104,11 @@ const mainAlbumInfo = (album) => {
 const addReview = () => {
     newReviewForm.addEventListener("submit", (e) => {
         e.preventDefault()
-        let newReview = e.target.review.value
-        console.log(newReview)
-        albumReviews = globalAlbum.reviews
-        console.log(albumReviews)
-        albumReviews.push(newReview)
+        let newReview = {reviews: [...globalAlbum.reviews, e.target.review.value]}
+        // console.log(newReview)
+        // albumReviews = globalAlbum.reviews
+        // console.log(albumReviews)
+        // albumReviews.push(newReview)
         // let newReview = document.createElement('li')
         // newReview.innerText = e.target.review.value
         // albumRev.append(newReview)
@@ -109,7 +117,7 @@ const addReview = () => {
 }
 
 const keepReview = (newReview) => {
-    fetch(`${url}/${globalAlbum}`, {
+    fetch(`${url}/${albumId}`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -202,21 +210,23 @@ const addRating = () => {
 //         })
 //     })
 // }
-const deleteAlbum = () => {
-    deleteBtn.addEventListener("click", () => {
-    albumRev.remove()
-    albumInfo.remove()
-    albumDesc.remove()
-    albumArtist.remove()
-    ratingAvrg.remove()
-    albumTitle.remove()
-    avrgRatingTitle.remove()
-    artistName.remove()
-    albumMainImg.remove()
-    // albumList.remove()
-    console.log(albumRev)
-    })
-}
+
+// const deleteAlbum = () => {
+//     deleteBtn.addEventListener("click", () => {
+//         console.log(globalAlbum)
+//     })
+
+// //         // console.log(globalAlbum)
+// //         // albumRev.remove()
+// //         // albumInfo.remove()
+// //         // albumDesc.remove()
+// //         // albumArtist.remove()
+// //         // ratingAvrg.remove()
+// //         // albumTitle.remove()
+// //         // artistName.remove()
+// //         // albumMainImg.remove()
+// //         // console.log(albumId)
+// }
 
 // like button should toggle liked/unliked
 const handleLike = () => {

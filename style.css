@@ -6,19 +6,25 @@ body {
 }
 
 .dark-mode {
-    background: #414141;
-    color: #FFFDE7;
+  background: #414141;
+  color: #FFFDE7;
+}
+
+#add-album.form {
+  text-align: center;
+  width: 300px;
+  padding: 8px;
 }
 
 #light-dark-mode-toggle{
-    text-align: center;
-    padding-top: .05px;
+  text-align: center;
+  padding-top: .05px;
 }
 
 #lightanddark{
   text-align: center;
   font-family: Georgia, 'Times New Roman', Times, serif;
-  padding-bottom: 0px;
+  margin-bottom: 3px;
 }
 
 /* The switch - the box around the slider */
@@ -100,7 +106,7 @@ body {
 #album-list img {
   width: 175px;
   height: auto;
-  margin: 10px;
+  margin: 8px;
 }
 
 #album-list img:hover {
@@ -122,42 +128,48 @@ body {
 #artist-description {
   float: left;
   width: 300px;
+  height: auto;
   padding: 8px;
 }
 
 #album-reviews {
-  float: left;
   width: 300px;
   padding: 8px;
   padding-top: 0px;
 }
 
-#new-review {
+#new-review.form {
   float: left;
   width: 300px;
   padding: 8px;
+  margin-right: 300px;
 }
 
-#add-album {
-  float: left;
-  width: 300px;
-  padding: 8px;
+#average-rating-title {
+  margin-bottom: 0px;
 }
 
-#add-rating {
-  float: left;
-  width: 300px;
-  padding: 8px;
+#rating-avrg {
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
-#ratings-combined {
-  float: left;
-  width: 300px;
-  padding: 8px;
+#add-your-rating {
+  margin-top: 5px;
+  margin-bottom: 0px;
+}
+
+#rating {
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .input-text {
   font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#new-album-rating {
+  width: 145px;
 }
 
 .submit {
@@ -176,7 +188,6 @@ body {
   color: #414141;
   border-color: #414141;
 }
-
 
 :root{
   --primary-color:

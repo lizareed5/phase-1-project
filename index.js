@@ -2,6 +2,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     getAlbums()
     addReview()
+    revealAlbumForm()
     addAlbum()
     addRating()
     handleLike()
@@ -26,9 +27,11 @@ let albumRev = document.querySelector("#review-list")
 let editBtn = document.querySelector("#edit-review")
 let newReviewForm = document.querySelector("#new-review")
 let newReviewBtn = document.querySelector("#review-btn")
+let newAlbumBtn = document.querySelector("#add-a-new-album")
 let addAlbumForm = document.querySelector("#new-album")
 let newRatingForm = document.querySelector("#new-rating")
 let ratingAvrg = document.querySelector("#average-rating-amt")
+ratingAvrg.setAttribute("id", "rating-avrg")
 let toggleBtn = document.querySelector("#light-dark-mode-toggle")
 let deleteBtn = document.querySelector("#delete")
 let globalAlbum
@@ -57,7 +60,6 @@ const renderAlbums = (currentAlbum) => {
         mainAlbumInfo(currentAlbum)
         globalAlbum = currentAlbum.id
         likedAlbum = currentAlbum.liked
-        // console.log(globalAlbum)
     })
 }
 
@@ -68,15 +70,18 @@ const mainAlbumInfo = (album) => {
     albumTitle.innerText = album.name
     albumArtist.innerText = album.artist
     ratingAvrg.innerText = album.rating + `/10`
+    trackList.innerText = " "
     album.tracks.forEach(track => {
         let songLi = document.createElement('li')
         songLi.innerText = track
         trackList.append(songLi)
     })
-    artistName.innerText = album.artist
+    artistName.innerText = album.name
     albumDesc.innerText = album.description
+    albumRev.innerText = " "
     album.reviews.forEach(review => {
         let reviewLi = document.createElement('li')
+        reviewLi.setAttribute("id", "lists")
         reviewLi.innerText = review
         albumRev.append(reviewLi)
     })
@@ -96,7 +101,7 @@ const addReview = () => {
     })
 }
 
-const keepReview = (globalAlbum) => {
+const keepReview = (newReview) => {
     fetch(`${url}/${globalAlbum}`, {
         method: "POST",
         headers: {
@@ -110,6 +115,19 @@ const keepReview = (globalAlbum) => {
 // add edit button to change their review: PATRICK
 
 // add a new album, render new album, keep new album
+const revealAlbumForm = () => {
+    document.getElementById("new-album").style.display = "none"
+    newAlbumBtn.addEventListener("click", () => {
+        console.log("click")
+        if (addAlbumForm.style.display === "none") {
+            addAlbumForm.style.display = "block"
+        } else {
+            addAlbumForm.style.display = "none"
+        }
+        })
+        addAlbumForm.style.display = "block"
+    }
+
 const addAlbum = () => {
     addAlbumForm.addEventListener("submit", (e) => {
         e.preventDefault()
@@ -120,11 +138,17 @@ const addAlbum = () => {
             image: e.target.image.value,
             rating: e.target.rating.value,
             description: e.target.description.value,
-            reviews: e.target.reviews.value
+            reviews: e.target.reviews.value,
+            liked: false
             //tracklist isn't working rn
         }
-        // albumObj.tracks = tracks.split(" ")
         keepNewAlbum(albumObj)
+        // let newTrackList = tracks.split(" ")
+        // newTrackList.forEach(track => {
+        //     let newTrackLi = document.createElement('li')
+        //     newTrackLi.innerText = track
+        //     // albumObj.appendChild(newTrackLi)
+        // })
     })
 }
 

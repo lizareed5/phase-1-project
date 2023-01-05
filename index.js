@@ -80,6 +80,8 @@ const mainAlbumInfo = (album) => {
         reviewLi.innerText = review
         albumRev.append(reviewLi)
     })
+    // reviewLi.innerText = "";
+    // songList.innerText = "";
     liked.textContent = album.liked? "liked":"not liked"
 }
 
@@ -88,7 +90,7 @@ const addReview = () => {
     newReviewForm.addEventListener("submit", (e) => {
         e.preventDefault()
         let newReview = document.createElement('li')
-        newReview = e.target.review.value
+        newReview.innerText = e.target.review.value
         albumRev.append(newReview)
         keepReview(newReview)
     })
@@ -119,8 +121,9 @@ const addAlbum = () => {
             rating: e.target.rating.value,
             description: e.target.description.value,
             reviews: e.target.reviews.value
-            //tracklist and rating aren't working rn
+            //tracklist isn't working rn
         }
+        // albumObj.tracks = tracks.split(" ")
         keepNewAlbum(albumObj)
     })
 }

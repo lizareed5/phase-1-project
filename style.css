@@ -8,6 +8,24 @@ body {
 .dark-mode {
   background: #414141;
   color: #FFFDE7;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.dark-mode-submit {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  border-color: #FFFDE7;
+  background-color: #FFFDE7;
+  color:#414141;
+  text-align: center;
+  padding: 5px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.dark-mode-submit:hover {
+  background-color: #414141;
+  color: #FFFDE7;
+  border-color: #FFFDE7;
 }
 
 #add-album.form {
@@ -16,9 +34,13 @@ body {
   padding: 8px;
 }
 
-#light-dark-mode-toggle{
+#top {
   text-align: center;
+}
+
+#light-dark-mode-toggle{
   padding-top: .05px;
+  padding-bottom: 5px;
 }
 
 #lightanddark{

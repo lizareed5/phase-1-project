@@ -32,6 +32,7 @@ DELETE | /albums/id | deletes an album from the database
 The Record Rater app allows users to view albums and songs on the homepage, like/unlike the album, add a rating, add a review, add a new album, and delete an album.
 * User can view the songs/albums of artist
 * User can add a new review
+* User can add a new rating and the website will take an average of all ratings
 * User can add a new album
 * User can like/unlike an album
 * User can delete an album
@@ -47,7 +48,7 @@ The Record Rater app allows users to view albums and songs on the homepage, like
 * Our project is in *development*. We are currently adding more functionality and fixing bugs.
 
 ## ROOM FOR IMPROVEMENT
-* Improve functionality with the POST and DELETE requests
+* Improve functionality with the POST and DELETE requests with ratings, reviews, and albums
 * Improve overall design and layout of the page so it flows more nicely
 * Create edit button for reviews
 

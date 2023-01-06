@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     addAlbum()
     addRating()
     handleLike()
-    // deleteAlbum()
+    deleteAlbum()
    
     // keepDeleteAlbum()
 })
@@ -39,6 +39,7 @@ let toggleBtn = document.querySelector("#light-dark-mode-toggle")
 let deleteBtn = document.querySelector("#delete")
 let globalAlbum
 let albumId
+let currRating
 let likedAlbum
 let albumReviews = []
 
@@ -67,6 +68,7 @@ const renderAlbums = (currentAlbum) => {
         albumId = currentAlbum.id
         globalAlbum = currentAlbum
         likedAlbum = currentAlbum.liked
+        currRating = currentAlbum.rating
         // deleteBtn.addEventListener("click", () => {
         //     globalAlbum.innerHTML = " "
         // })
@@ -186,8 +188,18 @@ const keepNewAlbum = (albumObj) => {
 // add a new rating
 const addRating = () => {
     newRatingForm.addEventListener("submit", (e) => {
-            e.preventDefault()
-            ratingAvrg.innerText = e.target.rating.value + `/10`
+        e.preventDefault()
+        currRating.push(e.target.rating.value)
+
+        console.log(currRating)
+        let ratingAvg = 0
+        for(let i = 0; i < currRating.length; i++){
+            ratingAvg += parseInt(currRating[i])
+        }
+        // console.log("ratingAvg: " + ratingAvg)
+        // console.log("currRating: " + currRating.length)
+        ratingAvg = (ratingAvg / currRating.length).toFixed(2)
+        ratingAvrg.innerText = ratingAvg + `/10`
         })
 }
 
@@ -211,22 +223,27 @@ const addRating = () => {
 //     })
 // }
 
-// const deleteAlbum = () => {
-//     deleteBtn.addEventListener("click", () => {
-//         console.log(globalAlbum)
-//     })
+const deleteAlbum = () => {
+    deleteBtn.addEventListener("click", () => {
+        // console.log(currRating)
+        // albumRev = ""
+        // currRating = 0
+        // ratingAvrg.innerText = currRating
+        // globalAlbum.remove()
+        // albumRev.remove()
+        // albumInfo.remove()
+        // albumDesc = null
+        // albumArtist.remove()
+        // ratingAvrg.remove()
+        // albumTitle.remove()
+        // artistName.remove()
+        // albumMainImg.remove()
+        // console.log(albumId)
+        console.log(currRating)
+    })
 
-// //         // console.log(globalAlbum)
-// //         // albumRev.remove()
-// //         // albumInfo.remove()
-// //         // albumDesc.remove()
-// //         // albumArtist.remove()
-// //         // ratingAvrg.remove()
-// //         // albumTitle.remove()
-// //         // artistName.remove()
-// //         // albumMainImg.remove()
-// //         // console.log(albumId)
-// }
+        
+}
 
 // like button should toggle liked/unliked
 const handleLike = () => {

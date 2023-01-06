@@ -185,6 +185,17 @@ const addRating = () => {
 }
 
 // add delete button to delete their album
+const deleteAlbum = () => {
+    deleteBtn.addEventListener("click", (globalAlbum) => {
+        albumsArray.splice(albumId-1, 1)
+        console.log(albumImg)
+        albumImg.remove()
+        albumsArray.forEach(currentAlbum => mainAlbumInfo(currentAlbum))
+        mainAlbumInfo(albumsArray[0])
+        keepDeleteAlbum(globalAlbum)
+    })
+}
+
 const keepDeleteAlbum = () => {
     fetch(`${url}/${albumId}`, {
         method: 'DELETE'
@@ -199,17 +210,6 @@ const keepDeleteAlbum = () => {
             image: '',
             reviews: ''
         })
-    })
-}
-
-const deleteAlbum = () => {
-    deleteBtn.addEventListener("click", (globalAlbum) => {
-        albumsArray.splice(albumId-1, 1)
-        console.log(albumImg)
-        albumImg.remove()
-        albumsArray.forEach(currentAlbum => mainAlbumInfo(currentAlbum))
-        mainAlbumInfo(albumsArray[0])
-        keepDeleteAlbum(globalAlbum)
     })
 }
 

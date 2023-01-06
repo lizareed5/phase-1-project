@@ -17,7 +17,7 @@
         "Throwing Good After Bad"
       ],
       "image": "https://upload.wikimedia.org/wikipedia/en/7/7a/Brandi_Carlile_-_In_These_Silent_Days.png",
-      "rating": 8.5,
+      "rating": [8.5],
       "description": "In These Silent Days is the seventh studio album by American singer-songwriter Brandi Carlile.",
       "reviews": [
         "Seven albums in, Carlile has long since proven herself constitutionally incapable of making a bad record. She’s not about to start now. -Entertainment Weekly",
@@ -48,7 +48,7 @@
         "SUMMER RENAISSANCE"
       ],
       "image": "https://upload.wikimedia.org/wikipedia/en/a/ad/Beyonc%C3%A9_-_Renaissance.png",
-      "rating": 8.7,
+      "rating": [8.7],
       "description": "Renaissance is the seventh studio album by American singer Beyoncé.",
       "reviews": [
         "Renaissance is both backward-looking and forward-thinking. A colorful, euphoric and glittery celebration of what has passed and what is still to come. -HipHopDX",

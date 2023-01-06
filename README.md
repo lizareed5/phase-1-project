@@ -1,30 +1,56 @@
-#ALBUM LIKER
+# Record Rater
+Phase 1 Project: JavaScript, HTML, CSS, JSON
 
-INTRODUCTION
+<!-- ## Table of Contents
+- [Introduction] (#introduction)
+- [Functions] (#functions) -->
 
-Album Liker app allows users to view the albums and songs on the homepage, add ratings and review as well as viewing previous ratings posted by other users
+## INTRODUCTION
+The Record Rater app allows users to view and interact with different music albums.  
 
-FUNCTIONS
+## REPO
+* GitHub Repository: https://github.com/lizareed5/phase-1-project
 
-view the songs/albums of artist, GET
+## API
+* [JSON Server](https://github.com/learn-co-curriculum/json-server-template)
 
-// code explanation
+## TECHNOLOGIES
+* JavaScript
+* HTML
+* CSS
+* JSON  
 
-make a comment/review, POST
+## FEATURES
+### Backend API Points
+METHOD | ENDPOINT | DESCRIPTION
+------ | ---------| -----------
+GET | /albums | fetches a list of albums and its data from the database
+POST | /albums/id | keep a new review and a new album
+DELETE | /albums/id | deletes an album from the database
 
-// code explanation
+## FUNCTIONALITY
+The Record Rater app allows users to view albums and songs on the homepage, like/unlike the album, add a rating, add a review, add a new album, and delete an album.
+* User can view the songs/albums of artist
+* User can add a new review
+* User can add a new album
+* User can like/unlike an album
+* User can delete an album
+* User can toggle between light and dark mode
 
-like/unlike song/album, POST, PATCH
+## A FEW FUNCTIONS...
+*  `getAlbums()` sends a GET fetch request to the server and gathers the albums data. It then calls `renderAlbums()`.
+* `renderAlbums()` creates an image, sets it to the album's image from the database, and renders all album images to the top nav bar on the DOM. Next, it creates an click `eventListener` on each image that populates all of the album's information using `mainAlbumInfo`.
+* `mainALbumInfo()` sets the HTML attributes to the album's information from the database
+* `addAlbum()` allows the user to submit a form and calls in `keepNewAlbum()` which makes a POST request and calls in `renderAlbums()` which adds it to the DOM and the server permanently.
 
-// code explanation
+## PROJECT STATUS
+* Our project is in *development*. We are currently adding more functionality and fixing bugs.
 
-edit their comment, PATCH
+## ROOM FOR IMPROVEMENT
+* Improve functionality with the POST and DELETE requests
+* Improve overall design and layout of the page so it flows more nicely
+* Create edit button for reviews
 
-// code explanation
-
-delete their comment, DELETE
-
-// code explanation
-
-Add light/dark mode ‘Button’
-
+## SERVER SETUP
+1. Clone [repository] (https://github.com/lizareed5/phase-1-project)
+2. Run `npm run dev`

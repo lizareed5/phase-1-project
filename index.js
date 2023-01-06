@@ -101,14 +101,14 @@ const mainAlbumInfo = (album) => {
 const addReview = () => {
     newReviewForm.addEventListener("submit", (e) => {
         e.preventDefault()
-        let newReview = {reviews: [...globalAlbum.reviews, e.target.review.value]}
+        // let newReview = {reviews: [...globalAlbum.reviews, e.target.review.value]}
         // console.log(newReview)
         // albumReviews = globalAlbum.reviews
         // console.log(albumReviews)
         // albumReviews.push(newReview)
-        // let newReview = document.createElement('li')
-        // newReview.innerText = e.target.review.value
-        // albumRev.append(newReview)
+        let newReview = document.createElement('li')
+        newReview.innerText = e.target.review.value
+        albumRev.append(newReview)
         keepReview(newReview)
     })
 }

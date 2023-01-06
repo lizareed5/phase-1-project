@@ -7,15 +7,12 @@ document.addEventListener("DOMContentLoaded", () => {
     addRating()
     handleLike()
     deleteAlbum()
-   
-    // keepDeleteAlbum()
+    lightDarkMode()
 })
 
-// set our consts e.g. (const url = "http://localhost:3000", const album = ... , const artist = ...)
-
+// set our consts
 const url = "http://localhost:3000/albums"
 let albumList = document.querySelector("#album-list")
-// let albumImg = document.querySelector("#nav-img")
 let albumHeaderLogo = document.querySelector(".album-covers")
 let albumInfo = document.querySelector("#album-info")
 let albumTitle = document.querySelector("#title")
@@ -42,39 +39,37 @@ let albumId
 let currRating
 let likedAlbum
 let albumReviews = []
+let albumsArray = []
+let albumImg
 
 // fetch request on url
 const getAlbums = () => {
     fetch(url)
     .then(response => response.json())
-    // use .map to itirate over data
     .then((data) => {
         data.map(currentAlbum => renderAlbums(currentAlbum))
         mainAlbumInfo(data[0])
         globalAlbum = data[0]
         albumId = data[0].id
+        albumsArray = data
     })
 }
 
 // create function to add images to "nav" element from html
 // make an eventlistener to images shown to display details and make image larger on "body html" element
 const renderAlbums = (currentAlbum) => {
-    let albumImg = document.createElement("img")
+    albumImg = document.createElement("img")
     albumImg.src = currentAlbum.image
     albumImg.alt = currentAlbum.albumTitle
     albumList.appendChild(albumImg)
     albumImg.addEventListener("click", () => {
         mainAlbumInfo(currentAlbum)
         albumId = currentAlbum.id
+        imgList = currentAlbum.image
         globalAlbum = currentAlbum
         likedAlbum = currentAlbum.liked
         currRating = currentAlbum.rating
-        // deleteBtn.addEventListener("click", () => {
-        //     globalAlbum.innerHTML = " "
-        // })
     })
-        
-
 }
 
 // create function to pull up album info into the main album that's been clicked
@@ -129,8 +124,6 @@ const keepReview = (newReview) => {
     })
     }
 
-// add edit button to change their review: PATRICK
-
 // add a new album, render new album, keep new album
 const revealAlbumForm = () => {
     document.getElementById("new-album").style.display = "none"
@@ -142,7 +135,6 @@ const revealAlbumForm = () => {
             addAlbumForm.style.display = "none"
         }
         })
-        addAlbumForm.style.display = "block"
     }
 
 const addAlbum = () => {
@@ -160,16 +152,7 @@ const addAlbum = () => {
             reviews: newReviews,
             liked: false
         }
-        console.log(albumObj.description)
-        console.log(albumObj.reviews)
-        console.log(albumObj.tracks)
         keepNewAlbum(albumObj)
-        // let newTrackList = tracks.split(" ")
-        // newTrackList.forEach(track => {
-        //     let newTrackLi = document.createElement('li')
-        //     newTrackLi.innerText = track
-        //     // albumObj.appendChild(newTrackLi)
-        // })
     })
 }
 
@@ -196,53 +179,38 @@ const addRating = () => {
         for(let i = 0; i < currRating.length; i++){
             ratingAvg += parseInt(currRating[i])
         }
-        // console.log("ratingAvg: " + ratingAvg)
-        // console.log("currRating: " + currRating.length)
         ratingAvg = (ratingAvg / currRating.length).toFixed(2)
         ratingAvrg.innerText = ratingAvg + `/10`
         })
 }
 
-
-// add delete button to delete their album: PATRICK
-// const keepDeleteAlbum = () => {
-//     document.querySelector(`${globalAlbum}`).remove() 
-//     fetch(`${url}/${globalAlbum}`, {
-//         method: 'DELETE'
-//     })
-//     .then(res => res.json())
-//     .then(data => { 
+// add delete button to delete their album
+const keepDeleteAlbum = () => {
+    fetch(`${url}/${albumId}`, {
+        method: 'DELETE'
+    })
+    .then(res => res.json())
+    .then(data => { 
         
-//         showDetails({ 
-//             name: '',
-//             artist: 0,
-//             tracks: '',
-//             image: '',
-//             reviews: ''
-//         })
-//     })
-// }
+        renderAlbums({ 
+            name: '',
+            artist: 0,
+            tracks: '',
+            image: '',
+            reviews: ''
+        })
+    })
+}
 
 const deleteAlbum = () => {
-    deleteBtn.addEventListener("click", () => {
-        // console.log(currRating)
-        // albumRev = ""
-        // currRating = 0
-        // ratingAvrg.innerText = currRating
-        // globalAlbum.remove()
-        // albumRev.remove()
-        // albumInfo.remove()
-        // albumDesc = null
-        // albumArtist.remove()
-        // ratingAvrg.remove()
-        // albumTitle.remove()
-        // artistName.remove()
-        // albumMainImg.remove()
-        // console.log(albumId)
-        console.log(currRating)
+    deleteBtn.addEventListener("click", (globalAlbum) => {
+        albumsArray.splice(albumId-1, 1)
+        console.log(albumImg)
+        albumImg.remove()
+        albumsArray.forEach(currentAlbum => mainAlbumInfo(currentAlbum))
+        mainAlbumInfo(albumsArray[0])
+        keepDeleteAlbum(globalAlbum)
     })
-
-        
 }
 
 // like button should toggle liked/unliked
@@ -260,13 +228,14 @@ const handleLike = () => {
     )
 }
 
+// light and dark mode toggle button at the top of the page (header)
+const toggleSwitch = document.getElementById('toggle-switch');
+const body = document.body;
+const submitButtons = document.querySelector('.button');
 
-
-// light and dark mode toggle button at the top of the page (header): PATRICK
-
-const toggle = document.getElementById('light-dark-mode-toggle');
-const body = document.querySelector('body');
-
-toggle.addEventListener('click', function(){
-    
-})
+const lightDarkMode = () => {
+    toggleSwitch.addEventListener('click', () => {
+        body.classList.toggle('dark-mode');
+        submitButtons.classList.toggle('dark-mode-submit');
+    })
+}
